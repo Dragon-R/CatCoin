@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const gravity = 1000
+const gravity = 500
 
 var PlayerName = "Cat"
 var hp = 100
@@ -34,7 +34,7 @@ func move(delta):
 	if(!is_on_floor()):
 		velocity.y += gravity * delta
 	elif(Input.is_action_pressed("ui_w")):
-		velocity.y = -600
+		velocity.y = -400
 
 
 func animation():
