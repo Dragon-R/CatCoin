@@ -49,16 +49,16 @@ playing = true
 [node name="RayCasts" type="Node2D" parent="."]
 
 [node name="RayCast2D1" type="RayCast2D" parent="RayCasts"]
-position = Vector2( -40, 40 )
+position = Vector2( -40, 41 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 
 [node name="RayCast2D2" type="RayCast2D" parent="RayCasts"]
-position = Vector2( 0, 40 )
+position = Vector2( 0, 41 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 
 [node name="RayCast2D3" type="RayCast2D" parent="RayCasts"]
-position = Vector2( 40, 40 )
+position = Vector2( 40, 41 )
 enabled = true
 cast_to = Vector2( 0, 1 )

@@ -6,7 +6,7 @@ var PlayerName = "Cat"
 var hp = 100
 var damage = 16.5
 var velocity = Vector2()
-var speed = 300
+var speed = 400
 onready var animatedSprite = $AnimatedSprite
 var raycasts = []
 
@@ -31,10 +31,12 @@ func move(delta):
 		velocity.x -= speed
 	if(Input.is_action_pressed("ui_d")):
 		velocity.x += speed
-	if(!is_on_floor()):
+	if(!is_grounded()):
 		velocity.y += gravity * delta
 	elif(Input.is_action_pressed("ui_w")):
 		velocity.y = -400
+	if(is_grounded()):
+		velocity.y = 0
 
 
 func animation():
@@ -55,7 +57,12 @@ func animation():
 
 
 func is_grounded():
-	pass
+	var cont = 0
+	while(cont < raycasts.size()):
+		if(raycasts[cont].is_colliding()):
+			return true
+		cont += 1
+	return false
 
 
 
